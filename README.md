@@ -13,6 +13,13 @@ For more information, please visit [https://kubevela.io/](https://kubevela.io/)
 Python 2.7 and 3.4+
 
 ## Installation & Usage
+### requirements.txt
+```shell
+# vela client
+git+https://github.com/xiandan-erizo/vela-client.git
+```
+
+
 ### pip install
 
 If the python package is hosted on Github, you can install directly from Github
