@@ -41,7 +41,6 @@ from vela_client.api_client import ApiClient
 from vela_client.configuration import Configuration
 # import models into sdk package
 from vela_client.models.addon_dependency import AddonDependency
-from vela_client.models.addon_deploy_to import AddonDeployTo
 from vela_client.models.addon_git_addon_source import AddonGitAddonSource
 from vela_client.models.addon_gitee_addon_source import AddonGiteeAddonSource
 from vela_client.models.addon_gitlab_addon_source import AddonGitlabAddonSource

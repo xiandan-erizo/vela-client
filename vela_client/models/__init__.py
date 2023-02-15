@@ -15,7 +15,6 @@ from __future__ import absolute_import
 
 # import models into model package
 from vela_client.models.addon_dependency import AddonDependency
-from vela_client.models.addon_deploy_to import AddonDeployTo
 from vela_client.models.addon_git_addon_source import AddonGitAddonSource
 from vela_client.models.addon_gitee_addon_source import AddonGiteeAddonSource
 from vela_client.models.addon_gitlab_addon_source import AddonGitlabAddonSource
