@@ -30,25 +30,30 @@ class V1EnableAddonRequest(object):
     swagger_types = {
         'args': 'object',
         'clusters': 'list[str]',
+        'registry_name': 'str',
         'version': 'str'
     }
 
     attribute_map = {
         'args': 'args',
         'clusters': 'clusters',
+        'registry_name': 'registryName',
         'version': 'version'
     }
 
-    def __init__(self, args=None, clusters=None, version=None):  # noqa: E501
+    def __init__(self, args=None, clusters=None, registry_name=None, version=None):  # noqa: E501
         """V1EnableAddonRequest - a model defined in Swagger"""  # noqa: E501
         self._args = None
         self._clusters = None
+        self._registry_name = None
         self._version = None
         self.discriminator = None
         if args is not None:
             self.args = args
         if clusters is not None:
             self.clusters = clusters
+        if registry_name is not None:
+            self.registry_name = registry_name
         if version is not None:
             self.version = version
 
@@ -93,6 +98,27 @@ class V1EnableAddonRequest(object):
         """
 
         self._clusters = clusters
+
+    @property
+    def registry_name(self):
+        """Gets the registry_name of this V1EnableAddonRequest.  # noqa: E501
+
+
+        :return: The registry_name of this V1EnableAddonRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._registry_name
+
+    @registry_name.setter
+    def registry_name(self, registry_name):
+        """Sets the registry_name of this V1EnableAddonRequest.
+
+
+        :param registry_name: The registry_name of this V1EnableAddonRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._registry_name = registry_name
 
     @property
     def version(self):

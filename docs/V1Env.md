@@ -12,5 +12,5 @@ Name | Type | Description | Notes
 **targets** | [**list[V1NameAlias]**](V1NameAlias.md) |  | [optional] 
 **update_time** | **datetime** |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to README]](../vela-client/README.md)
 

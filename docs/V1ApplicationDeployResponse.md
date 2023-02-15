@@ -10,9 +10,10 @@ Name | Type | Description | Notes
 **image_info** | [**ModelImageInfo**](ModelImageInfo.md) |  | [optional] 
 **note** | **str** |  | 
 **reason** | **str** |  | [optional] 
+**record** | [**V1WorkflowRecordBase**](V1WorkflowRecordBase.md) |  | 
 **status** | **str** |  | 
 **trigger_type** | **str** |  | 
 **version** | **str** |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to README]](../vela-client/README.md)
 

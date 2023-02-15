@@ -43,7 +43,8 @@ class V1alpha1InputItem(object):
         self._parameter_key = None
         self.discriminator = None
         self._from = _from
-        self.parameter_key = parameter_key
+        if parameter_key is not None:
+            self.parameter_key = parameter_key
 
     @property
     def _from(self):
@@ -86,8 +87,6 @@ class V1alpha1InputItem(object):
         :param parameter_key: The parameter_key of this V1alpha1InputItem.  # noqa: E501
         :type: str
         """
-        if parameter_key is None:
-            raise ValueError("Invalid value for `parameter_key`, must not be `None`")  # noqa: E501
 
         self._parameter_key = parameter_key
 

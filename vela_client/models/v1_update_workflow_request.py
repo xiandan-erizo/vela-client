@@ -31,30 +31,38 @@ class V1UpdateWorkflowRequest(object):
         'alias': 'str',
         'default': 'bool',
         'description': 'str',
-        'steps': 'list[V1WorkflowStep]'
+        'mode': 'str',
+        'steps': 'list[V1WorkflowStep]',
+        'sub_mode': 'str'
     }
 
     attribute_map = {
         'alias': 'alias',
         'default': 'default',
         'description': 'description',
-        'steps': 'steps'
+        'mode': 'mode',
+        'steps': 'steps',
+        'sub_mode': 'subMode'
     }
 
-    def __init__(self, alias=None, default=None, description=None, steps=None):  # noqa: E501
+    def __init__(self, alias=None, default=None, description=None, mode=None, steps=None, sub_mode=None):  # noqa: E501
         """V1UpdateWorkflowRequest - a model defined in Swagger"""  # noqa: E501
         self._alias = None
         self._default = None
         self._description = None
+        self._mode = None
         self._steps = None
+        self._sub_mode = None
         self.discriminator = None
         if alias is not None:
             self.alias = alias
         self.default = default
         if description is not None:
             self.description = description
+        self.mode = mode
         if steps is not None:
             self.steps = steps
+        self.sub_mode = sub_mode
 
     @property
     def alias(self):
@@ -122,6 +130,29 @@ class V1UpdateWorkflowRequest(object):
         self._description = description
 
     @property
+    def mode(self):
+        """Gets the mode of this V1UpdateWorkflowRequest.  # noqa: E501
+
+
+        :return: The mode of this V1UpdateWorkflowRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._mode
+
+    @mode.setter
+    def mode(self, mode):
+        """Sets the mode of this V1UpdateWorkflowRequest.
+
+
+        :param mode: The mode of this V1UpdateWorkflowRequest.  # noqa: E501
+        :type: str
+        """
+        if mode is None:
+            raise ValueError("Invalid value for `mode`, must not be `None`")  # noqa: E501
+
+        self._mode = mode
+
+    @property
     def steps(self):
         """Gets the steps of this V1UpdateWorkflowRequest.  # noqa: E501
 
@@ -141,6 +172,29 @@ class V1UpdateWorkflowRequest(object):
         """
 
         self._steps = steps
+
+    @property
+    def sub_mode(self):
+        """Gets the sub_mode of this V1UpdateWorkflowRequest.  # noqa: E501
+
+
+        :return: The sub_mode of this V1UpdateWorkflowRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._sub_mode
+
+    @sub_mode.setter
+    def sub_mode(self, sub_mode):
+        """Sets the sub_mode of this V1UpdateWorkflowRequest.
+
+
+        :param sub_mode: The sub_mode of this V1UpdateWorkflowRequest.  # noqa: E501
+        :type: str
+        """
+        if sub_mode is None:
+            raise ValueError("Invalid value for `sub_mode`, must not be `None`")  # noqa: E501
+
+        self._sub_mode = sub_mode
 
     def to_dict(self):
         """Returns the model properties as a dict"""

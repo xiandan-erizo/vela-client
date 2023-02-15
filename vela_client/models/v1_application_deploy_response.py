@@ -35,6 +35,7 @@ class V1ApplicationDeployResponse(object):
         'image_info': 'ModelImageInfo',
         'note': 'str',
         'reason': 'str',
+        'record': 'V1WorkflowRecordBase',
         'status': 'str',
         'trigger_type': 'str',
         'version': 'str'
@@ -48,12 +49,13 @@ class V1ApplicationDeployResponse(object):
         'image_info': 'imageInfo',
         'note': 'note',
         'reason': 'reason',
+        'record': 'record',
         'status': 'status',
         'trigger_type': 'triggerType',
         'version': 'version'
     }
 
-    def __init__(self, code_info=None, create_time=None, deploy_user=None, env_name=None, image_info=None, note=None, reason=None, status=None, trigger_type=None, version=None):  # noqa: E501
+    def __init__(self, code_info=None, create_time=None, deploy_user=None, env_name=None, image_info=None, note=None, reason=None, record=None, status=None, trigger_type=None, version=None):  # noqa: E501
         """V1ApplicationDeployResponse - a model defined in Swagger"""  # noqa: E501
         self._code_info = None
         self._create_time = None
@@ -62,6 +64,7 @@ class V1ApplicationDeployResponse(object):
         self._image_info = None
         self._note = None
         self._reason = None
+        self._record = None
         self._status = None
         self._trigger_type = None
         self._version = None
@@ -77,6 +80,7 @@ class V1ApplicationDeployResponse(object):
         self.note = note
         if reason is not None:
             self.reason = reason
+        self.record = record
         self.status = status
         self.trigger_type = trigger_type
         self.version = version
@@ -233,6 +237,29 @@ class V1ApplicationDeployResponse(object):
         """
 
         self._reason = reason
+
+    @property
+    def record(self):
+        """Gets the record of this V1ApplicationDeployResponse.  # noqa: E501
+
+
+        :return: The record of this V1ApplicationDeployResponse.  # noqa: E501
+        :rtype: V1WorkflowRecordBase
+        """
+        return self._record
+
+    @record.setter
+    def record(self, record):
+        """Sets the record of this V1ApplicationDeployResponse.
+
+
+        :param record: The record of this V1ApplicationDeployResponse.  # noqa: E501
+        :type: V1WorkflowRecordBase
+        """
+        if record is None:
+            raise ValueError("Invalid value for `record`, must not be `None`")  # noqa: E501
+
+        self._record = record
 
     @property
     def status(self):

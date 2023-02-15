@@ -6,10 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**apply_distribution**](ProjectApi.md#apply_distribution) | **POST** /api/v1/projects/{projectName}/distributions | apply the distribution job of the config
 [**create_config**](ProjectApi.md#create_config) | **POST** /api/v1/projects/{projectName}/configs | create a config in a project
+[**create_project**](ProjectApi.md#create_project) | **POST** /api/v1/projects | create a project
 [**create_project_permission**](ProjectApi.md#create_project_permission) | **POST** /api/v1/projects/{projectName}/permissions | create a project level perm policy
 [**create_project_role**](ProjectApi.md#create_project_role) | **POST** /api/v1/projects/{projectName}/roles | create project level role
 [**create_project_user**](ProjectApi.md#create_project_user) | **POST** /api/v1/projects/{projectName}/users | add a user to a project
-[**createproject**](ProjectApi.md#createproject) | **POST** /api/v1/projects | create a project
 [**delete_config**](ProjectApi.md#delete_config) | **DELETE** /api/v1/projects/{projectName}/configs/{configName} | delete a config from a project
 [**delete_distribution**](ProjectApi.md#delete_distribution) | **DELETE** /api/v1/projects/{projectName}/distributions/{distributionName} | delete a distribution job of the config
 [**delete_project**](ProjectApi.md#delete_project) | **DELETE** /api/v1/projects/{projectName} | delete a project
@@ -27,11 +27,11 @@ Method | HTTP request | Description
 [**list_project_roles**](ProjectApi.md#list_project_roles) | **GET** /api/v1/projects/{projectName}/roles | list all project level roles
 [**list_project_targets**](ProjectApi.md#list_project_targets) | **GET** /api/v1/projects/{projectName}/targets | get targets list belong to a project
 [**list_project_user**](ProjectApi.md#list_project_user) | **GET** /api/v1/projects/{projectName}/users | list all users belong to a project
-[**listprojects**](ProjectApi.md#listprojects) | **GET** /api/v1/projects | list all projects
+[**list_projects**](ProjectApi.md#list_projects) | **GET** /api/v1/projects | list all projects
 [**update_config**](ProjectApi.md#update_config) | **PUT** /api/v1/projects/{projectName}/configs/{configName} | update a config in a project
 [**update_project**](ProjectApi.md#update_project) | **PUT** /api/v1/projects/{projectName} | update a project
 [**update_project_role**](ProjectApi.md#update_project_role) | **PUT** /api/v1/projects/{projectName}/roles/{roleName} | update project level role
-[**update_project_user**](ProjectApi.md#update_project_user) | **PUT** /api/v1/projects/{projectName}/users/{userName} | add a user to a project
+[**update_project_user**](ProjectApi.md#update_project_user) | **PUT** /api/v1/projects/{projectName}/users/{userName} | update a user from a project
 
 # **apply_distribution**
 > V1EmptyResponse apply_distribution(body, project_name)
@@ -80,7 +80,7 @@ No authorization required
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **create_config**
 > V1Config create_config(body, project_name)
@@ -129,7 +129,54 @@ No authorization required
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
+
+# **create_project**
+> V1ProjectBase create_project(body)
+
+create a project
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import vela_client
+from vela_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vela_client.ProjectApi()
+body = vela_client.V1CreateProjectRequest()  # V1CreateProjectRequest | 
+
+try:
+    # create a project
+    api_response = api_instance.create_project(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProjectApi->create_project: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**V1CreateProjectRequest**](V1CreateProjectRequest.md)|  | 
+
+### Return type
+
+[**V1ProjectBase**](V1ProjectBase.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **create_project_permission**
 > list[V1PermissionBase] create_project_permission(project_name)
@@ -176,7 +223,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **create_project_role**
 > V1RoleBase create_project_role(body, project_name)
@@ -225,7 +272,7 @@ No authorization required
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **create_project_user**
 > V1ProjectUserBase create_project_user(body, project_name)
@@ -274,54 +321,7 @@ No authorization required
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **createproject**
-> V1ProjectBase createproject(body)
-
-create a project
-
-### Example
-
-```python
-from __future__ import print_function
-import time
-import vela_client
-from vela_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = vela_client.ProjectApi()
-body = vela_client.V1CreateProjectRequest()  # V1CreateProjectRequest | 
-
-try:
-    # create a project
-    api_response = api_instance.createproject(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectApi->createproject: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**V1CreateProjectRequest**](V1CreateProjectRequest.md)|  | 
-
-### Return type
-
-[**V1ProjectBase**](V1ProjectBase.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/json, application/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **delete_config**
 > V1EmptyResponse delete_config(project_name, config_name)
@@ -370,7 +370,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **delete_distribution**
 > V1EmptyResponse delete_distribution(project_name, distribution_name)
@@ -419,7 +419,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **delete_project**
 > V1EmptyResponse delete_project(project_name)
@@ -466,7 +466,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **delete_project_permission**
 > list[V1PermissionBase] delete_project_permission(project_name, permission_name)
@@ -515,7 +515,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **delete_project_role**
 > V1EmptyResponse delete_project_role(project_name, role_name)
@@ -564,7 +564,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **delete_project_user**
 > V1EmptyResponse delete_project_user(body, project_name, user_name)
@@ -615,7 +615,7 @@ No authorization required
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **detail_config**
 > V1Config detail_config(body, project_name, config_name)
@@ -666,7 +666,7 @@ No authorization required
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **detail_project**
 > V1ProjectBase detail_project(project_name)
@@ -713,7 +713,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **get_config_template**
 > V1ConfigTemplateDetail get_config_template(template_name, namespace=namespace)
@@ -762,7 +762,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **get_config_templates**
 > V1ListConfigTemplateResponse get_config_templates(project_name, namespace)
@@ -811,7 +811,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **get_configs**
 > V1ListConfigResponse get_configs(project_name, template=template)
@@ -860,7 +860,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **get_providers**
 > V1ListTerraformProviderResponse get_providers(project_name)
@@ -907,7 +907,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **list_distributions**
 > V1ListConfigDistributionResponse list_distributions(project_name)
@@ -954,7 +954,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **list_project_permissions**
 > list[V1PermissionBase] list_project_permissions(project_name)
@@ -1001,7 +1001,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **list_project_roles**
 > V1ListRolesResponse list_project_roles(project_name)
@@ -1048,7 +1048,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **list_project_targets**
 > V1EmptyResponse list_project_targets(project_name)
@@ -1095,7 +1095,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **list_project_user**
 > V1ListProjectUsersResponse list_project_user(project_name)
@@ -1142,10 +1142,10 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
-# **listprojects**
-> V1ListProjectResponse listprojects()
+# **list_projects**
+> V1ListProjectResponse list_projects()
 
 list all projects
 
@@ -1163,10 +1163,10 @@ api_instance = vela_client.ProjectApi()
 
 try:
     # list all projects
-    api_response = api_instance.listprojects()
+    api_response = api_instance.list_projects()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ProjectApi->listprojects: %s\n" % e)
+    print("Exception when calling ProjectApi->list_projects: %s\n" % e)
 ```
 
 ### Parameters
@@ -1185,7 +1185,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **update_config**
 > V1Config update_config(body, project_name, config_name)
@@ -1236,7 +1236,7 @@ No authorization required
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **update_project**
 > V1ProjectBase update_project(body, project_name)
@@ -1285,7 +1285,7 @@ No authorization required
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **update_project_role**
 > V1RoleBase update_project_role(body, project_name, role_name)
@@ -1336,12 +1336,12 @@ No authorization required
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **update_project_user**
 > V1ProjectUserBase update_project_user(body, project_name, user_name)
 
-add a user to a project
+update a user from a project
 
 ### Example
 
@@ -1359,7 +1359,7 @@ project_name = 'project_name_example'  # str | identifier of the project
 user_name = 'user_name_example'  # str | identifier of the project user
 
 try:
-    # add a user to a project
+    # update a user from a project
     api_response = api_instance.update_project_user(body, project_name, user_name)
     pprint(api_response)
 except ApiException as e:
@@ -1387,5 +1387,5 @@ No authorization required
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 

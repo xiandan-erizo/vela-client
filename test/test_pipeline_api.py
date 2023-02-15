@@ -126,6 +126,13 @@ class TestPipelineApi(unittest.TestCase):
         """
         pass
 
+    def test_resume_pipeline_run(self):
+        """Test case for resume_pipeline_run
+
+        resume suspend pipeline run  # noqa: E501
+        """
+        pass
+
     def test_run_pipeline(self):
         """Test case for run_pipeline
 
@@ -137,6 +144,13 @@ class TestPipelineApi(unittest.TestCase):
         """Test case for stop_pipeline
 
         stop pipeline run  # noqa: E501
+        """
+        pass
+
+    def test_terminate_pipeline_run(self):
+        """Test case for terminate_pipeline_run
+
+        resume suspend pipeline run  # noqa: E501
         """
         pass
 

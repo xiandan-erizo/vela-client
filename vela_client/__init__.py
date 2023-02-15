@@ -133,6 +133,7 @@ from vela_client.models.v1_application_request import V1ApplicationRequest
 from vela_client.models.v1_application_resource_info import V1ApplicationResourceInfo
 from vela_client.models.v1_application_response import V1ApplicationResponse
 from vela_client.models.v1_application_revision_base import V1ApplicationRevisionBase
+from vela_client.models.v1_application_rollback_response import V1ApplicationRollbackResponse
 from vela_client.models.v1_application_statistics_response import V1ApplicationStatisticsResponse
 from vela_client.models.v1_application_status_response import V1ApplicationStatusResponse
 from vela_client.models.v1_application_template_base import V1ApplicationTemplateBase
@@ -273,6 +274,7 @@ from vela_client.models.v1_root_fs import V1RootFS
 from vela_client.models.v1_run_pipeline_request import V1RunPipelineRequest
 from vela_client.models.v1_run_stat import V1RunStat
 from vela_client.models.v1_run_stat_info import V1RunStatInfo
+from vela_client.models.v1_secret_reference import V1SecretReference
 from vela_client.models.v1_simple_response import V1SimpleResponse
 from vela_client.models.v1_statistic_info import V1StatisticInfo
 from vela_client.models.v1_step_base import V1StepBase
@@ -306,6 +308,7 @@ from vela_client.models.v1_vela_ql_view_response import V1VelaQLViewResponse
 from vela_client.models.v1_workflow_base import V1WorkflowBase
 from vela_client.models.v1_workflow_policy_binding import V1WorkflowPolicyBinding
 from vela_client.models.v1_workflow_record import V1WorkflowRecord
+from vela_client.models.v1_workflow_record_base import V1WorkflowRecordBase
 from vela_client.models.v1_workflow_step import V1WorkflowStep
 from vela_client.models.v1_workflow_step_base import V1WorkflowStepBase
 from vela_client.models.v1alpha1_input_item import V1alpha1InputItem

@@ -9,5 +9,5 @@ Name | Type | Description | Notes
 **media_type** | **str** |  | [optional] 
 **schema_version** | **int** |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to README]](../vela-client/README.md)
 

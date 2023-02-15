@@ -31,6 +31,9 @@ class V1DetailWorkflowRecordResponse(object):
         'application_revision': 'str',
         'deploy_time': 'datetime',
         'deploy_user': 'str',
+        'end_time': 'datetime',
+        'message': 'str',
+        'mode': 'str',
         'name': 'str',
         'namespace': 'str',
         'note': 'str',
@@ -46,6 +49,9 @@ class V1DetailWorkflowRecordResponse(object):
         'application_revision': 'applicationRevision',
         'deploy_time': 'deployTime',
         'deploy_user': 'deployUser',
+        'end_time': 'endTime',
+        'message': 'message',
+        'mode': 'mode',
         'name': 'name',
         'namespace': 'namespace',
         'note': 'note',
@@ -57,11 +63,14 @@ class V1DetailWorkflowRecordResponse(object):
         'workflow_name': 'workflowName'
     }
 
-    def __init__(self, application_revision=None, deploy_time=None, deploy_user=None, name=None, namespace=None, note=None, start_time=None, status=None, steps=None, trigger_type=None, workflow_alias=None, workflow_name=None):  # noqa: E501
+    def __init__(self, application_revision=None, deploy_time=None, deploy_user=None, end_time=None, message=None, mode=None, name=None, namespace=None, note=None, start_time=None, status=None, steps=None, trigger_type=None, workflow_alias=None, workflow_name=None):  # noqa: E501
         """V1DetailWorkflowRecordResponse - a model defined in Swagger"""  # noqa: E501
         self._application_revision = None
         self._deploy_time = None
         self._deploy_user = None
+        self._end_time = None
+        self._message = None
+        self._mode = None
         self._name = None
         self._namespace = None
         self._note = None
@@ -75,6 +84,10 @@ class V1DetailWorkflowRecordResponse(object):
         self.application_revision = application_revision
         self.deploy_time = deploy_time
         self.deploy_user = deploy_user
+        if end_time is not None:
+            self.end_time = end_time
+        self.message = message
+        self.mode = mode
         self.name = name
         self.namespace = namespace
         self.note = note
@@ -155,6 +168,73 @@ class V1DetailWorkflowRecordResponse(object):
             raise ValueError("Invalid value for `deploy_user`, must not be `None`")  # noqa: E501
 
         self._deploy_user = deploy_user
+
+    @property
+    def end_time(self):
+        """Gets the end_time of this V1DetailWorkflowRecordResponse.  # noqa: E501
+
+
+        :return: The end_time of this V1DetailWorkflowRecordResponse.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._end_time
+
+    @end_time.setter
+    def end_time(self, end_time):
+        """Sets the end_time of this V1DetailWorkflowRecordResponse.
+
+
+        :param end_time: The end_time of this V1DetailWorkflowRecordResponse.  # noqa: E501
+        :type: datetime
+        """
+
+        self._end_time = end_time
+
+    @property
+    def message(self):
+        """Gets the message of this V1DetailWorkflowRecordResponse.  # noqa: E501
+
+
+        :return: The message of this V1DetailWorkflowRecordResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._message
+
+    @message.setter
+    def message(self, message):
+        """Sets the message of this V1DetailWorkflowRecordResponse.
+
+
+        :param message: The message of this V1DetailWorkflowRecordResponse.  # noqa: E501
+        :type: str
+        """
+        if message is None:
+            raise ValueError("Invalid value for `message`, must not be `None`")  # noqa: E501
+
+        self._message = message
+
+    @property
+    def mode(self):
+        """Gets the mode of this V1DetailWorkflowRecordResponse.  # noqa: E501
+
+
+        :return: The mode of this V1DetailWorkflowRecordResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._mode
+
+    @mode.setter
+    def mode(self, mode):
+        """Sets the mode of this V1DetailWorkflowRecordResponse.
+
+
+        :param mode: The mode of this V1DetailWorkflowRecordResponse.  # noqa: E501
+        :type: str
+        """
+        if mode is None:
+            raise ValueError("Invalid value for `mode`, must not be `None`")  # noqa: E501
+
+        self._mode = mode
 
     @property
     def name(self):

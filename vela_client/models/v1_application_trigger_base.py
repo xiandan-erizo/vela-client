@@ -34,6 +34,7 @@ class V1ApplicationTriggerBase(object):
         'description': 'str',
         'name': 'str',
         'payload_type': 'str',
+        'registry': 'str',
         'token': 'str',
         'type': 'str',
         'update_time': 'datetime',
@@ -47,13 +48,14 @@ class V1ApplicationTriggerBase(object):
         'description': 'description',
         'name': 'name',
         'payload_type': 'payloadType',
+        'registry': 'registry',
         'token': 'token',
         'type': 'type',
         'update_time': 'updateTime',
         'workflow_name': 'workflowName'
     }
 
-    def __init__(self, alias=None, component_name=None, create_time=None, description=None, name=None, payload_type=None, token=None, type=None, update_time=None, workflow_name=None):  # noqa: E501
+    def __init__(self, alias=None, component_name=None, create_time=None, description=None, name=None, payload_type=None, registry=None, token=None, type=None, update_time=None, workflow_name=None):  # noqa: E501
         """V1ApplicationTriggerBase - a model defined in Swagger"""  # noqa: E501
         self._alias = None
         self._component_name = None
@@ -61,6 +63,7 @@ class V1ApplicationTriggerBase(object):
         self._description = None
         self._name = None
         self._payload_type = None
+        self._registry = None
         self._token = None
         self._type = None
         self._update_time = None
@@ -75,6 +78,7 @@ class V1ApplicationTriggerBase(object):
             self.description = description
         self.name = name
         self.payload_type = payload_type
+        self.registry = registry
         self.token = token
         self.type = type
         self.update_time = update_time
@@ -211,6 +215,29 @@ class V1ApplicationTriggerBase(object):
             raise ValueError("Invalid value for `payload_type`, must not be `None`")  # noqa: E501
 
         self._payload_type = payload_type
+
+    @property
+    def registry(self):
+        """Gets the registry of this V1ApplicationTriggerBase.  # noqa: E501
+
+
+        :return: The registry of this V1ApplicationTriggerBase.  # noqa: E501
+        :rtype: str
+        """
+        return self._registry
+
+    @registry.setter
+    def registry(self, registry):
+        """Sets the registry of this V1ApplicationTriggerBase.
+
+
+        :param registry: The registry of this V1ApplicationTriggerBase.  # noqa: E501
+        :type: str
+        """
+        if registry is None:
+            raise ValueError("Invalid value for `registry`, must not be `None`")  # noqa: E501
+
+        self._registry = registry
 
     @property
     def token(self):

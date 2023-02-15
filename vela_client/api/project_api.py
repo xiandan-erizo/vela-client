@@ -242,6 +242,103 @@ class ProjectApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def create_project(self, body, **kwargs):  # noqa: E501
+        """create a project  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_project(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param V1CreateProjectRequest body: (required)
+        :return: V1ProjectBase
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_project_with_http_info(body, **kwargs)  # noqa: E501
+        else:
+            (data) = self.create_project_with_http_info(body, **kwargs)  # noqa: E501
+            return data
+
+    def create_project_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create a project  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_project_with_http_info(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param V1CreateProjectRequest body: (required)
+        :return: V1ProjectBase
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_project" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `create_project`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'application/xml'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ["BearerToken"]  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v1/projects', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='V1ProjectBase',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def create_project_permission(self, project_name, **kwargs):  # noqa: E501
         """create a project level perm policy  # noqa: E501
 
@@ -538,103 +635,6 @@ class ProjectApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='V1ProjectUserBase',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def createproject(self, body, **kwargs):  # noqa: E501
-        """create a project  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.createproject(body, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param V1CreateProjectRequest body: (required)
-        :return: V1ProjectBase
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.createproject_with_http_info(body, **kwargs)  # noqa: E501
-        else:
-            (data) = self.createproject_with_http_info(body, **kwargs)  # noqa: E501
-            return data
-
-    def createproject_with_http_info(self, body, **kwargs):  # noqa: E501
-        """create a project  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.createproject_with_http_info(body, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param V1CreateProjectRequest body: (required)
-        :return: V1ProjectBase
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method createproject" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `createproject`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/xml'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ["BearerToken"]  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v1/projects', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='V1ProjectBase',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2311,12 +2311,12 @@ class ProjectApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def listprojects(self, **kwargs):  # noqa: E501
+    def list_projects(self, **kwargs):  # noqa: E501
         """list all projects  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.listprojects(async_req=True)
+        >>> thread = api.list_projects(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -2326,17 +2326,17 @@ class ProjectApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.listprojects_with_http_info(**kwargs)  # noqa: E501
+            return self.list_projects_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.listprojects_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.list_projects_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def listprojects_with_http_info(self, **kwargs):  # noqa: E501
+    def list_projects_with_http_info(self, **kwargs):  # noqa: E501
         """list all projects  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.listprojects_with_http_info(async_req=True)
+        >>> thread = api.list_projects_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -2356,7 +2356,7 @@ class ProjectApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method listprojects" % key
+                    " to method list_projects" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -2728,7 +2728,7 @@ class ProjectApi(object):
             collection_formats=collection_formats)
 
     def update_project_user(self, body, project_name, user_name, **kwargs):  # noqa: E501
-        """add a user to a project  # noqa: E501
+        """update a user from a project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2751,7 +2751,7 @@ class ProjectApi(object):
             return data
 
     def update_project_user_with_http_info(self, body, project_name, user_name, **kwargs):  # noqa: E501
-        """add a user to a project  # noqa: E501
+        """update a user from a project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

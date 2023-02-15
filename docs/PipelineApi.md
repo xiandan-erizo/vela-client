@@ -18,8 +18,10 @@ Method | HTTP request | Description
 [**list_context_values**](PipelineApi.md#list_context_values) | **GET** /api/v1/projects/{projectName}/pipelines/{pipelineName}/contexts | list pipeline context values
 [**list_pipeline_runs**](PipelineApi.md#list_pipeline_runs) | **GET** /api/v1/projects/{projectName}/pipelines/{pipelineName}/runs | list pipeline runs
 [**list_pipelines**](PipelineApi.md#list_pipelines) | **GET** /api/v1/pipelines | list pipelines
+[**resume_pipeline_run**](PipelineApi.md#resume_pipeline_run) | **POST** /api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}/resume | resume suspend pipeline run
 [**run_pipeline**](PipelineApi.md#run_pipeline) | **POST** /api/v1/projects/{projectName}/pipelines/{pipelineName}/run | run pipeline
 [**stop_pipeline**](PipelineApi.md#stop_pipeline) | **POST** /api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}/stop | stop pipeline run
+[**terminate_pipeline_run**](PipelineApi.md#terminate_pipeline_run) | **POST** /api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}/terminate | resume suspend pipeline run
 [**update_context_value**](PipelineApi.md#update_context_value) | **PUT** /api/v1/projects/{projectName}/pipelines/{pipelineName}/contexts/{contextName} | update pipeline context value
 [**update_pipeline**](PipelineApi.md#update_pipeline) | **PUT** /api/v1/projects/{projectName}/pipelines/{pipelineName} | update pipeline
 
@@ -72,7 +74,7 @@ No authorization required
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **create_pipeline**
 > V1PipelineBase create_pipeline(body, project_name)
@@ -121,7 +123,7 @@ No authorization required
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **delete_context_value**
 > V1ContextNameResponse delete_context_value(project_name, pipeline_name, context_name)
@@ -172,7 +174,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **delete_pipeline**
 > V1PipelineMetaResponse delete_pipeline(project_name, pipeline_name)
@@ -221,7 +223,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **delete_pipeline_run**
 > V1PipelineRunMeta delete_pipeline_run(project_name, pipeline_name, run_name)
@@ -272,7 +274,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **get_pipeline**
 > V1GetPipelineResponse get_pipeline(pipeline_name, project_name)
@@ -321,7 +323,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **get_pipeline_run**
 > V1PipelineRunBase get_pipeline_run(project_name, pipeline_name, run_name)
@@ -372,7 +374,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **get_pipeline_run_input**
 > V1GetPipelineRunInputResponse get_pipeline_run_input(step, project_name, pipeline_name, run_name)
@@ -425,7 +427,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **get_pipeline_run_log**
 > V1GetPipelineRunLogResponse get_pipeline_run_log(project_name, pipeline_name, run_name, step=step)
@@ -478,7 +480,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **get_pipeline_run_output**
 > V1GetPipelineRunOutputResponse get_pipeline_run_output(step, project_name, pipeline_name, run_name)
@@ -531,7 +533,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **get_pipeline_run_status**
 > V1alpha1WorkflowRunStatus get_pipeline_run_status(project_name, pipeline_name, run_name)
@@ -582,7 +584,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **list_context_values**
 > V1ListContextValueResponse list_context_values(project_name, pipeline_name)
@@ -631,7 +633,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **list_pipeline_runs**
 > V1ListPipelineRunResponse list_pipeline_runs(project_name, pipeline_name, status=status)
@@ -682,7 +684,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **list_pipelines**
 > V1ListPipelineResponse list_pipelines(query=query, project_name=project_name, detailed=detailed)
@@ -733,7 +735,58 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
+
+# **resume_pipeline_run**
+> V1EmptyResponse resume_pipeline_run(project_name, pipeline_name, run_name)
+
+resume suspend pipeline run
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import vela_client
+from vela_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vela_client.PipelineApi()
+project_name = 'project_name_example'  # str | project name
+pipeline_name = 'pipeline_name_example'  # str | pipeline name
+run_name = 'run_name_example'  # str | pipeline run name
+
+try:
+    # resume suspend pipeline run
+    api_response = api_instance.resume_pipeline_run(project_name, pipeline_name, run_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PipelineApi->resume_pipeline_run: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_name** | **str**| project name | 
+ **pipeline_name** | **str**| pipeline name | 
+ **run_name** | **str**| pipeline run name | 
+
+### Return type
+
+[**V1EmptyResponse**](V1EmptyResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **run_pipeline**
 > V1PipelineRun run_pipeline(body, project_name, pipeline_name)
@@ -784,7 +837,7 @@ No authorization required
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **stop_pipeline**
 > V1PipelineRunMeta stop_pipeline(project_name, pipeline_name, run_name)
@@ -835,7 +888,58 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
+
+# **terminate_pipeline_run**
+> V1EmptyResponse terminate_pipeline_run(project_name, pipeline_name, run_name)
+
+resume suspend pipeline run
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import vela_client
+from vela_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vela_client.PipelineApi()
+project_name = 'project_name_example'  # str | project name
+pipeline_name = 'pipeline_name_example'  # str | pipeline name
+run_name = 'run_name_example'  # str | pipeline run name
+
+try:
+    # resume suspend pipeline run
+    api_response = api_instance.terminate_pipeline_run(project_name, pipeline_name, run_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PipelineApi->terminate_pipeline_run: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_name** | **str**| project name | 
+ **pipeline_name** | **str**| pipeline name | 
+ **run_name** | **str**| pipeline run name | 
+
+### Return type
+
+[**V1EmptyResponse**](V1EmptyResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **update_context_value**
 > V1Context update_context_value(body, project_name, pipeline_name, context_name)
@@ -888,7 +992,7 @@ No authorization required
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **update_pipeline**
 > V1PipelineBase update_pipeline(body, project_name, pipeline_name)
@@ -939,5 +1043,5 @@ No authorization required
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 

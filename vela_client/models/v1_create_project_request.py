@@ -31,6 +31,7 @@ class V1CreateProjectRequest(object):
         'alias': 'str',
         'description': 'str',
         'name': 'str',
+        'namespace': 'str',
         'owner': 'str'
     }
 
@@ -38,14 +39,16 @@ class V1CreateProjectRequest(object):
         'alias': 'alias',
         'description': 'description',
         'name': 'name',
+        'namespace': 'namespace',
         'owner': 'owner'
     }
 
-    def __init__(self, alias=None, description=None, name=None, owner=None):  # noqa: E501
+    def __init__(self, alias=None, description=None, name=None, namespace=None, owner=None):  # noqa: E501
         """V1CreateProjectRequest - a model defined in Swagger"""  # noqa: E501
         self._alias = None
         self._description = None
         self._name = None
+        self._namespace = None
         self._owner = None
         self.discriminator = None
         if alias is not None:
@@ -53,6 +56,8 @@ class V1CreateProjectRequest(object):
         if description is not None:
             self.description = description
         self.name = name
+        if namespace is not None:
+            self.namespace = namespace
         if owner is not None:
             self.owner = owner
 
@@ -120,6 +125,27 @@ class V1CreateProjectRequest(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def namespace(self):
+        """Gets the namespace of this V1CreateProjectRequest.  # noqa: E501
+
+
+        :return: The namespace of this V1CreateProjectRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._namespace
+
+    @namespace.setter
+    def namespace(self, namespace):
+        """Sets the namespace of this V1CreateProjectRequest.
+
+
+        :param namespace: The namespace of this V1CreateProjectRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._namespace = namespace
 
     @property
     def owner(self):

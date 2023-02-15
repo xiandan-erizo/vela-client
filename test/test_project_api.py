@@ -42,6 +42,13 @@ class TestProjectApi(unittest.TestCase):
         """
         pass
 
+    def test_create_project(self):
+        """Test case for create_project
+
+        create a project  # noqa: E501
+        """
+        pass
+
     def test_create_project_permission(self):
         """Test case for create_project_permission
 
@@ -60,13 +67,6 @@ class TestProjectApi(unittest.TestCase):
         """Test case for create_project_user
 
         add a user to a project  # noqa: E501
-        """
-        pass
-
-    def test_createproject(self):
-        """Test case for createproject
-
-        create a project  # noqa: E501
         """
         pass
 
@@ -189,8 +189,8 @@ class TestProjectApi(unittest.TestCase):
         """
         pass
 
-    def test_listprojects(self):
-        """Test case for listprojects
+    def test_list_projects(self):
+        """Test case for list_projects
 
         list all projects  # noqa: E501
         """
@@ -220,7 +220,7 @@ class TestProjectApi(unittest.TestCase):
     def test_update_project_user(self):
         """Test case for update_project_user
 
-        add a user to a project  # noqa: E501
+        update a user from a project  # noqa: E501
         """
         pass
 

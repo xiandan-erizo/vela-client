@@ -31,6 +31,7 @@ class CommonTerraform(object):
         'configuration': 'str',
         'custom_region': 'str',
         'delete_resource': 'bool',
+        'git_credentials_secret_reference': 'V1SecretReference',
         'path': 'str',
         'provider_ref': 'TypesReference',
         'type': 'str',
@@ -41,17 +42,19 @@ class CommonTerraform(object):
         'configuration': 'configuration',
         'custom_region': 'customRegion',
         'delete_resource': 'deleteResource',
+        'git_credentials_secret_reference': 'gitCredentialsSecretReference',
         'path': 'path',
         'provider_ref': 'providerRef',
         'type': 'type',
         'write_connection_secret_to_ref': 'writeConnectionSecretToRef'
     }
 
-    def __init__(self, configuration=None, custom_region=None, delete_resource=None, path=None, provider_ref=None, type=None, write_connection_secret_to_ref=None):  # noqa: E501
+    def __init__(self, configuration=None, custom_region=None, delete_resource=None, git_credentials_secret_reference=None, path=None, provider_ref=None, type=None, write_connection_secret_to_ref=None):  # noqa: E501
         """CommonTerraform - a model defined in Swagger"""  # noqa: E501
         self._configuration = None
         self._custom_region = None
         self._delete_resource = None
+        self._git_credentials_secret_reference = None
         self._path = None
         self._provider_ref = None
         self._type = None
@@ -62,6 +65,8 @@ class CommonTerraform(object):
             self.custom_region = custom_region
         if delete_resource is not None:
             self.delete_resource = delete_resource
+        if git_credentials_secret_reference is not None:
+            self.git_credentials_secret_reference = git_credentials_secret_reference
         if path is not None:
             self.path = path
         if provider_ref is not None:
@@ -135,6 +140,27 @@ class CommonTerraform(object):
         """
 
         self._delete_resource = delete_resource
+
+    @property
+    def git_credentials_secret_reference(self):
+        """Gets the git_credentials_secret_reference of this CommonTerraform.  # noqa: E501
+
+
+        :return: The git_credentials_secret_reference of this CommonTerraform.  # noqa: E501
+        :rtype: V1SecretReference
+        """
+        return self._git_credentials_secret_reference
+
+    @git_credentials_secret_reference.setter
+    def git_credentials_secret_reference(self, git_credentials_secret_reference):
+        """Sets the git_credentials_secret_reference of this CommonTerraform.
+
+
+        :param git_credentials_secret_reference: The git_credentials_secret_reference of this CommonTerraform.  # noqa: E501
+        :type: V1SecretReference
+        """
+
+        self._git_credentials_secret_reference = git_credentials_secret_reference
 
     @property
     def path(self):

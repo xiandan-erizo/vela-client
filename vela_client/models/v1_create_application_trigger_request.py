@@ -33,6 +33,7 @@ class V1CreateApplicationTriggerRequest(object):
         'description': 'str',
         'name': 'str',
         'payload_type': 'str',
+        'registry': 'str',
         'type': 'str',
         'workflow_name': 'str'
     }
@@ -43,17 +44,19 @@ class V1CreateApplicationTriggerRequest(object):
         'description': 'description',
         'name': 'name',
         'payload_type': 'payloadType',
+        'registry': 'registry',
         'type': 'type',
         'workflow_name': 'workflowName'
     }
 
-    def __init__(self, alias=None, component_name=None, description=None, name=None, payload_type=None, type=None, workflow_name=None):  # noqa: E501
+    def __init__(self, alias=None, component_name=None, description=None, name=None, payload_type=None, registry=None, type=None, workflow_name=None):  # noqa: E501
         """V1CreateApplicationTriggerRequest - a model defined in Swagger"""  # noqa: E501
         self._alias = None
         self._component_name = None
         self._description = None
         self._name = None
         self._payload_type = None
+        self._registry = None
         self._type = None
         self._workflow_name = None
         self.discriminator = None
@@ -65,6 +68,8 @@ class V1CreateApplicationTriggerRequest(object):
             self.description = description
         self.name = name
         self.payload_type = payload_type
+        if registry is not None:
+            self.registry = registry
         self.type = type
         self.workflow_name = workflow_name
 
@@ -176,6 +181,27 @@ class V1CreateApplicationTriggerRequest(object):
             raise ValueError("Invalid value for `payload_type`, must not be `None`")  # noqa: E501
 
         self._payload_type = payload_type
+
+    @property
+    def registry(self):
+        """Gets the registry of this V1CreateApplicationTriggerRequest.  # noqa: E501
+
+
+        :return: The registry of this V1CreateApplicationTriggerRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._registry
+
+    @registry.setter
+    def registry(self, registry):
+        """Sets the registry of this V1CreateApplicationTriggerRequest.
+
+
+        :param registry: The registry of this V1CreateApplicationTriggerRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._registry = registry
 
     @property
     def type(self):

@@ -29,6 +29,9 @@ class V1WorkflowRecord(object):
     """
     swagger_types = {
         'application_revision': 'str',
+        'end_time': 'datetime',
+        'message': 'str',
+        'mode': 'str',
         'name': 'str',
         'namespace': 'str',
         'start_time': 'datetime',
@@ -40,6 +43,9 @@ class V1WorkflowRecord(object):
 
     attribute_map = {
         'application_revision': 'applicationRevision',
+        'end_time': 'endTime',
+        'message': 'message',
+        'mode': 'mode',
         'name': 'name',
         'namespace': 'namespace',
         'start_time': 'startTime',
@@ -49,9 +55,12 @@ class V1WorkflowRecord(object):
         'workflow_name': 'workflowName'
     }
 
-    def __init__(self, application_revision=None, name=None, namespace=None, start_time=None, status=None, steps=None, workflow_alias=None, workflow_name=None):  # noqa: E501
+    def __init__(self, application_revision=None, end_time=None, message=None, mode=None, name=None, namespace=None, start_time=None, status=None, steps=None, workflow_alias=None, workflow_name=None):  # noqa: E501
         """V1WorkflowRecord - a model defined in Swagger"""  # noqa: E501
         self._application_revision = None
+        self._end_time = None
+        self._message = None
+        self._mode = None
         self._name = None
         self._namespace = None
         self._start_time = None
@@ -61,6 +70,10 @@ class V1WorkflowRecord(object):
         self._workflow_name = None
         self.discriminator = None
         self.application_revision = application_revision
+        if end_time is not None:
+            self.end_time = end_time
+        self.message = message
+        self.mode = mode
         self.name = name
         self.namespace = namespace
         if start_time is not None:
@@ -93,6 +106,73 @@ class V1WorkflowRecord(object):
             raise ValueError("Invalid value for `application_revision`, must not be `None`")  # noqa: E501
 
         self._application_revision = application_revision
+
+    @property
+    def end_time(self):
+        """Gets the end_time of this V1WorkflowRecord.  # noqa: E501
+
+
+        :return: The end_time of this V1WorkflowRecord.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._end_time
+
+    @end_time.setter
+    def end_time(self, end_time):
+        """Sets the end_time of this V1WorkflowRecord.
+
+
+        :param end_time: The end_time of this V1WorkflowRecord.  # noqa: E501
+        :type: datetime
+        """
+
+        self._end_time = end_time
+
+    @property
+    def message(self):
+        """Gets the message of this V1WorkflowRecord.  # noqa: E501
+
+
+        :return: The message of this V1WorkflowRecord.  # noqa: E501
+        :rtype: str
+        """
+        return self._message
+
+    @message.setter
+    def message(self, message):
+        """Sets the message of this V1WorkflowRecord.
+
+
+        :param message: The message of this V1WorkflowRecord.  # noqa: E501
+        :type: str
+        """
+        if message is None:
+            raise ValueError("Invalid value for `message`, must not be `None`")  # noqa: E501
+
+        self._message = message
+
+    @property
+    def mode(self):
+        """Gets the mode of this V1WorkflowRecord.  # noqa: E501
+
+
+        :return: The mode of this V1WorkflowRecord.  # noqa: E501
+        :rtype: str
+        """
+        return self._mode
+
+    @mode.setter
+    def mode(self, mode):
+        """Sets the mode of this V1WorkflowRecord.
+
+
+        :param mode: The mode of this V1WorkflowRecord.  # noqa: E501
+        :type: str
+        """
+        if mode is None:
+            raise ValueError("Invalid value for `mode`, must not be `None`")  # noqa: E501
+
+        self._mode = mode
 
     @property
     def name(self):

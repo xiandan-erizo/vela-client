@@ -73,7 +73,7 @@ class TestApplicationApi(unittest.TestCase):
     def test_create_application_trigger(self):
         """Test case for create_application_trigger
 
-        create one application trigger  # noqa: E501
+        Create an application trigger  # noqa: E501
         """
         pass
 
@@ -122,7 +122,7 @@ class TestApplicationApi(unittest.TestCase):
     def test_delete_application_trigger(self):
         """Test case for delete_application_trigger
 
-        delete one application trigger  # noqa: E501
+        Delete an application trigger  # noqa: E501
         """
         pass
 
@@ -203,6 +203,27 @@ class TestApplicationApi(unittest.TestCase):
         """
         pass
 
+    def test_get_workflow_record_inputs(self):
+        """Test case for get_workflow_record_inputs
+
+        get the workflow step inputs  # noqa: E501
+        """
+        pass
+
+    def test_get_workflow_record_logs(self):
+        """Test case for get_workflow_record_logs
+
+        get the workflow step logs  # noqa: E501
+        """
+        pass
+
+    def test_get_workflow_record_outputs(self):
+        """Test case for get_workflow_record_outputs
+
+        get the workflow step inputs  # noqa: E501
+        """
+        pass
+
     def test_list_application_components(self):
         """Test case for list_application_components
 
@@ -241,7 +262,7 @@ class TestApplicationApi(unittest.TestCase):
     def test_list_application_triggers(self):
         """Test case for list_application_triggers
 
-        list application triggers  # noqa: E501
+        List the application triggers  # noqa: E501
         """
         pass
 
@@ -294,6 +315,13 @@ class TestApplicationApi(unittest.TestCase):
         """
         pass
 
+    def test_rollback_application_with_revision(self):
+        """Test case for rollback_application_with_revision
+
+        detail revision for application  # noqa: E501
+        """
+        pass
+
     def test_rollback_workflow_record(self):
         """Test case for rollback_workflow_record
 
@@ -333,6 +361,13 @@ class TestApplicationApi(unittest.TestCase):
         """Test case for update_application_trait
 
         update trait from a component  # noqa: E501
+        """
+        pass
+
+    def test_update_application_trigger(self):
+        """Test case for update_application_trigger
+
+        Update an application trigger  # noqa: E501
         """
         pass
 

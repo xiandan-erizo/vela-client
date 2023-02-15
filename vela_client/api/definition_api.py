@@ -142,6 +142,7 @@ class DefinitionApi(object):
         :param bool query_all: query all definitions include hidden in UI
         :param str applied_workload: if specified, query the trait definition applied to the workload
         :param str owner_addon: query by which addon created the definition
+        :param str scope: query by the specified scope like WorkflowRun or Application
         :return: V1SimpleResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -166,12 +167,13 @@ class DefinitionApi(object):
         :param bool query_all: query all definitions include hidden in UI
         :param str applied_workload: if specified, query the trait definition applied to the workload
         :param str owner_addon: query by which addon created the definition
+        :param str scope: query by the specified scope like WorkflowRun or Application
         :return: V1SimpleResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['type', 'query_all', 'applied_workload', 'owner_addon']  # noqa: E501
+        all_params = ['type', 'query_all', 'applied_workload', 'owner_addon', 'scope']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -204,6 +206,8 @@ class DefinitionApi(object):
             query_params.append(('appliedWorkload', params['applied_workload']))  # noqa: E501
         if 'owner_addon' in params:
             query_params.append(('ownerAddon', params['owner_addon']))  # noqa: E501
+        if 'scope' in params:
+            query_params.append(('scope', params['scope']))  # noqa: E501
 
         header_params = {}
 

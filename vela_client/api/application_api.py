@@ -651,7 +651,7 @@ class ApplicationApi(object):
             collection_formats=collection_formats)
 
     def create_application_trigger(self, body, app_name, **kwargs):  # noqa: E501
-        """create one application trigger  # noqa: E501
+        """Create an application trigger  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -673,7 +673,7 @@ class ApplicationApi(object):
             return data
 
     def create_application_trigger_with_http_info(self, body, app_name, **kwargs):  # noqa: E501
-        """create one application trigger  # noqa: E501
+        """Create an application trigger  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1374,7 +1374,7 @@ class ApplicationApi(object):
             collection_formats=collection_formats)
 
     def delete_application_trigger(self, app_name, token, **kwargs):  # noqa: E501
-        """delete one application trigger  # noqa: E501
+        """Delete an application trigger  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1396,7 +1396,7 @@ class ApplicationApi(object):
             return data
 
     def delete_application_trigger_with_http_info(self, app_name, token, **kwargs):  # noqa: E501
-        """delete one application trigger  # noqa: E501
+        """Delete an application trigger  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2593,6 +2593,357 @@ class ApplicationApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_workflow_record_inputs(self, app_name, workflow_name, record, step, **kwargs):  # noqa: E501
+        """get the workflow step inputs  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_workflow_record_inputs(app_name, workflow_name, record, step, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str app_name: identifier of the application. (required)
+        :param str workflow_name: identifier of the workflow (required)
+        :param str record: identifier of the workflow record (required)
+        :param str step: Specified the step filter (required)
+        :return: V1GetPipelineRunInputResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_workflow_record_inputs_with_http_info(app_name, workflow_name, record, step, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_workflow_record_inputs_with_http_info(app_name, workflow_name, record, step, **kwargs)  # noqa: E501
+            return data
+
+    def get_workflow_record_inputs_with_http_info(self, app_name, workflow_name, record, step, **kwargs):  # noqa: E501
+        """get the workflow step inputs  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_workflow_record_inputs_with_http_info(app_name, workflow_name, record, step, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str app_name: identifier of the application. (required)
+        :param str workflow_name: identifier of the workflow (required)
+        :param str record: identifier of the workflow record (required)
+        :param str step: Specified the step filter (required)
+        :return: V1GetPipelineRunInputResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['app_name', 'workflow_name', 'record', 'step']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workflow_record_inputs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'app_name' is set
+        if ('app_name' not in params or
+                params['app_name'] is None):
+            raise ValueError("Missing the required parameter `app_name` when calling `get_workflow_record_inputs`")  # noqa: E501
+        # verify the required parameter 'workflow_name' is set
+        if ('workflow_name' not in params or
+                params['workflow_name'] is None):
+            raise ValueError("Missing the required parameter `workflow_name` when calling `get_workflow_record_inputs`")  # noqa: E501
+        # verify the required parameter 'record' is set
+        if ('record' not in params or
+                params['record'] is None):
+            raise ValueError("Missing the required parameter `record` when calling `get_workflow_record_inputs`")  # noqa: E501
+        # verify the required parameter 'step' is set
+        if ('step' not in params or
+                params['step'] is None):
+            raise ValueError("Missing the required parameter `step` when calling `get_workflow_record_inputs`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'app_name' in params:
+            path_params['appName'] = params['app_name']  # noqa: E501
+        if 'workflow_name' in params:
+            path_params['workflowName'] = params['workflow_name']  # noqa: E501
+        if 'record' in params:
+            path_params['record'] = params['record']  # noqa: E501
+
+        query_params = []
+        if 'step' in params:
+            query_params.append(('step', params['step']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'application/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ["BearerToken"]  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v1/applications/{appName}/workflows/{workflowName}/records/{record}/inputs', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='V1GetPipelineRunInputResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_workflow_record_logs(self, app_name, workflow_name, record, step, **kwargs):  # noqa: E501
+        """get the workflow step logs  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_workflow_record_logs(app_name, workflow_name, record, step, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str app_name: identifier of the application. (required)
+        :param str workflow_name: identifier of the workflow (required)
+        :param str record: identifier of the workflow record (required)
+        :param str step: Specified the step filter (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_workflow_record_logs_with_http_info(app_name, workflow_name, record, step, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_workflow_record_logs_with_http_info(app_name, workflow_name, record, step, **kwargs)  # noqa: E501
+            return data
+
+    def get_workflow_record_logs_with_http_info(self, app_name, workflow_name, record, step, **kwargs):  # noqa: E501
+        """get the workflow step logs  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_workflow_record_logs_with_http_info(app_name, workflow_name, record, step, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str app_name: identifier of the application. (required)
+        :param str workflow_name: identifier of the workflow (required)
+        :param str record: identifier of the workflow record (required)
+        :param str step: Specified the step filter (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['app_name', 'workflow_name', 'record', 'step']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workflow_record_logs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'app_name' is set
+        if ('app_name' not in params or
+                params['app_name'] is None):
+            raise ValueError("Missing the required parameter `app_name` when calling `get_workflow_record_logs`")  # noqa: E501
+        # verify the required parameter 'workflow_name' is set
+        if ('workflow_name' not in params or
+                params['workflow_name'] is None):
+            raise ValueError("Missing the required parameter `workflow_name` when calling `get_workflow_record_logs`")  # noqa: E501
+        # verify the required parameter 'record' is set
+        if ('record' not in params or
+                params['record'] is None):
+            raise ValueError("Missing the required parameter `record` when calling `get_workflow_record_logs`")  # noqa: E501
+        # verify the required parameter 'step' is set
+        if ('step' not in params or
+                params['step'] is None):
+            raise ValueError("Missing the required parameter `step` when calling `get_workflow_record_logs`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'app_name' in params:
+            path_params['appName'] = params['app_name']  # noqa: E501
+        if 'workflow_name' in params:
+            path_params['workflowName'] = params['workflow_name']  # noqa: E501
+        if 'record' in params:
+            path_params['record'] = params['record']  # noqa: E501
+
+        query_params = []
+        if 'step' in params:
+            query_params.append(('step', params['step']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'application/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ["BearerToken"]  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v1/applications/{appName}/workflows/{workflowName}/records/{record}/logs', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_workflow_record_outputs(self, app_name, workflow_name, record, step, **kwargs):  # noqa: E501
+        """get the workflow step inputs  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_workflow_record_outputs(app_name, workflow_name, record, step, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str app_name: identifier of the application. (required)
+        :param str workflow_name: identifier of the workflow (required)
+        :param str record: identifier of the workflow record (required)
+        :param str step: Specified the step filter (required)
+        :return: V1GetPipelineRunOutputResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_workflow_record_outputs_with_http_info(app_name, workflow_name, record, step, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_workflow_record_outputs_with_http_info(app_name, workflow_name, record, step, **kwargs)  # noqa: E501
+            return data
+
+    def get_workflow_record_outputs_with_http_info(self, app_name, workflow_name, record, step, **kwargs):  # noqa: E501
+        """get the workflow step inputs  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_workflow_record_outputs_with_http_info(app_name, workflow_name, record, step, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str app_name: identifier of the application. (required)
+        :param str workflow_name: identifier of the workflow (required)
+        :param str record: identifier of the workflow record (required)
+        :param str step: Specified the step filter (required)
+        :return: V1GetPipelineRunOutputResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['app_name', 'workflow_name', 'record', 'step']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workflow_record_outputs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'app_name' is set
+        if ('app_name' not in params or
+                params['app_name'] is None):
+            raise ValueError("Missing the required parameter `app_name` when calling `get_workflow_record_outputs`")  # noqa: E501
+        # verify the required parameter 'workflow_name' is set
+        if ('workflow_name' not in params or
+                params['workflow_name'] is None):
+            raise ValueError("Missing the required parameter `workflow_name` when calling `get_workflow_record_outputs`")  # noqa: E501
+        # verify the required parameter 'record' is set
+        if ('record' not in params or
+                params['record'] is None):
+            raise ValueError("Missing the required parameter `record` when calling `get_workflow_record_outputs`")  # noqa: E501
+        # verify the required parameter 'step' is set
+        if ('step' not in params or
+                params['step'] is None):
+            raise ValueError("Missing the required parameter `step` when calling `get_workflow_record_outputs`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'app_name' in params:
+            path_params['appName'] = params['app_name']  # noqa: E501
+        if 'workflow_name' in params:
+            path_params['workflowName'] = params['workflow_name']  # noqa: E501
+        if 'record' in params:
+            path_params['record'] = params['record']  # noqa: E501
+
+        query_params = []
+        if 'step' in params:
+            query_params.append(('step', params['step']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'application/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ["BearerToken"]  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v1/applications/{appName}/workflows/{workflowName}/records/{record}/outputs', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='V1GetPipelineRunOutputResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def list_application_components(self, app_name, **kwargs):  # noqa: E501
         """gets the list of application components  # noqa: E501
 
@@ -3079,7 +3430,7 @@ class ApplicationApi(object):
             collection_formats=collection_formats)
 
     def list_application_triggers(self, app_name, **kwargs):  # noqa: E501
-        """list application triggers  # noqa: E501
+        """List the application triggers  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -3100,7 +3451,7 @@ class ApplicationApi(object):
             return data
 
     def list_application_triggers_with_http_info(self, app_name, **kwargs):  # noqa: E501
-        """list application triggers  # noqa: E501
+        """List the application triggers  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -3785,7 +4136,7 @@ class ApplicationApi(object):
         :param str app_name: identifier of the application. (required)
         :param str workflow_name: identifier of the workflow (required)
         :param str record: identifier of the  workflow record (required)
-        :return: None
+        :return: V1EmptyResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3808,7 +4159,7 @@ class ApplicationApi(object):
         :param str app_name: identifier of the application. (required)
         :param str workflow_name: identifier of the workflow (required)
         :param str record: identifier of the  workflow record (required)
-        :return: None
+        :return: V1EmptyResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3874,7 +4225,108 @@ class ApplicationApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='V1EmptyResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def rollback_application_with_revision(self, app_name, revision, **kwargs):  # noqa: E501
+        """detail revision for application  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.rollback_application_with_revision(app_name, revision, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str app_name: identifier of the application (required)
+        :param str revision: identifier of the application revision (required)
+        :return: V1ApplicationRollbackResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.rollback_application_with_revision_with_http_info(app_name, revision, **kwargs)  # noqa: E501
+        else:
+            (data) = self.rollback_application_with_revision_with_http_info(app_name, revision, **kwargs)  # noqa: E501
+            return data
+
+    def rollback_application_with_revision_with_http_info(self, app_name, revision, **kwargs):  # noqa: E501
+        """detail revision for application  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.rollback_application_with_revision_with_http_info(app_name, revision, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str app_name: identifier of the application (required)
+        :param str revision: identifier of the application revision (required)
+        :return: V1ApplicationRollbackResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['app_name', 'revision']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method rollback_application_with_revision" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'app_name' is set
+        if ('app_name' not in params or
+                params['app_name'] is None):
+            raise ValueError("Missing the required parameter `app_name` when calling `rollback_application_with_revision`")  # noqa: E501
+        # verify the required parameter 'revision' is set
+        if ('revision' not in params or
+                params['revision'] is None):
+            raise ValueError("Missing the required parameter `revision` when calling `rollback_application_with_revision`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'app_name' in params:
+            path_params['appName'] = params['app_name']  # noqa: E501
+        if 'revision' in params:
+            path_params['revision'] = params['revision']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'application/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ["BearerToken"]  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v1/applications/{appName}/revisions/{revision}/rollback', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='V1ApplicationRollbackResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3895,7 +4347,7 @@ class ApplicationApi(object):
         :param str workflow_name: identifier of the workflow (required)
         :param str record: identifier of the workflow record (required)
         :param str rollback_version: identifier of the rollback revision
-        :return: None
+        :return: V1WorkflowRecordBase
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3919,7 +4371,7 @@ class ApplicationApi(object):
         :param str workflow_name: identifier of the workflow (required)
         :param str record: identifier of the workflow record (required)
         :param str rollback_version: identifier of the rollback revision
-        :return: None
+        :return: V1WorkflowRecordBase
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3987,7 +4439,7 @@ class ApplicationApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='V1WorkflowRecordBase',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -4007,7 +4459,7 @@ class ApplicationApi(object):
         :param str app_name: identifier of the application. (required)
         :param str workflow_name: identifier of the workflow (required)
         :param str record: identifier of the workflow record (required)
-        :return: None
+        :return: V1EmptyResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4030,7 +4482,7 @@ class ApplicationApi(object):
         :param str app_name: identifier of the application. (required)
         :param str workflow_name: identifier of the workflow (required)
         :param str record: identifier of the workflow record (required)
-        :return: None
+        :return: V1EmptyResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4096,7 +4548,7 @@ class ApplicationApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='V1EmptyResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -4549,6 +5001,107 @@ class ApplicationApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='V1ApplicationTrait',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_application_trigger(self, app_name, token, **kwargs):  # noqa: E501
+        """Update an application trigger  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_application_trigger(app_name, token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str app_name: identifier of the application  (required)
+        :param str token: identifier of the trigger (required)
+        :return: V1ApplicationTriggerBase
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_application_trigger_with_http_info(app_name, token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_application_trigger_with_http_info(app_name, token, **kwargs)  # noqa: E501
+            return data
+
+    def update_application_trigger_with_http_info(self, app_name, token, **kwargs):  # noqa: E501
+        """Update an application trigger  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_application_trigger_with_http_info(app_name, token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str app_name: identifier of the application  (required)
+        :param str token: identifier of the trigger (required)
+        :return: V1ApplicationTriggerBase
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['app_name', 'token']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_application_trigger" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'app_name' is set
+        if ('app_name' not in params or
+                params['app_name'] is None):
+            raise ValueError("Missing the required parameter `app_name` when calling `update_application_trigger`")  # noqa: E501
+        # verify the required parameter 'token' is set
+        if ('token' not in params or
+                params['token'] is None):
+            raise ValueError("Missing the required parameter `token` when calling `update_application_trigger`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'app_name' in params:
+            path_params['appName'] = params['app_name']  # noqa: E501
+        if 'token' in params:
+            path_params['token'] = params['token']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'application/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ["BearerToken"]  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v1/applications/{appName}/triggers/{token}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='V1ApplicationTriggerBase',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

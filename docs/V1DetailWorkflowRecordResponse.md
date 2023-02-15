@@ -6,6 +6,9 @@ Name | Type | Description | Notes
 **application_revision** | **str** |  | 
 **deploy_time** | **datetime** |  | 
 **deploy_user** | **str** |  | 
+**end_time** | **datetime** |  | [optional] 
+**message** | **str** |  | 
+**mode** | **str** |  | 
 **name** | **str** |  | 
 **namespace** | **str** |  | 
 **note** | **str** |  | 
@@ -16,5 +19,5 @@ Name | Type | Description | Notes
 **workflow_alias** | **str** |  | 
 **workflow_name** | **str** |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to README]](../vela-client/README.md)
 

@@ -56,10 +56,10 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **list_definitions**
-> V1SimpleResponse list_definitions(type, query_all=query_all, applied_workload=applied_workload, owner_addon=owner_addon)
+> V1SimpleResponse list_definitions(type, query_all=query_all, applied_workload=applied_workload, owner_addon=owner_addon, scope=scope)
 
 list all definitions
 
@@ -78,11 +78,12 @@ type = 'type_example'  # str | query the definition type
 query_all = false  # bool | query all definitions include hidden in UI (optional) (default to false)
 applied_workload = 'applied_workload_example'  # str | if specified, query the trait definition applied to the workload (optional)
 owner_addon = 'owner_addon_example'  # str | query by which addon created the definition (optional)
+scope = 'scope_example'  # str | query by the specified scope like WorkflowRun or Application (optional)
 
 try:
     # list all definitions
     api_response = api_instance.list_definitions(type, query_all=query_all, applied_workload=applied_workload,
-                                                 owner_addon=owner_addon)
+                                                 owner_addon=owner_addon, scope=scope)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefinitionApi->list_definitions: %s\n" % e)
@@ -96,6 +97,7 @@ Name | Type | Description  | Notes
  **query_all** | **bool**| query all definitions include hidden in UI | [optional] [default to false]
  **applied_workload** | **str**| if specified, query the trait definition applied to the workload | [optional] 
  **owner_addon** | **str**| query by which addon created the definition | [optional] 
+ **scope** | **str**| query by the specified scope like WorkflowRun or Application | [optional] 
 
 ### Return type
 
@@ -110,7 +112,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **update_definition_status**
 > V1SimpleResponse update_definition_status(body)
@@ -157,7 +159,7 @@ No authorization required
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 
 # **update_ui_schema**
 > V1SimpleResponse update_ui_schema(body)
@@ -204,5 +206,5 @@ No authorization required
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/json, application/xml
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to README]](../vela-client/README.md)
 

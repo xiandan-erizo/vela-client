@@ -28,45 +28,19 @@ class V1alpha1WorkflowSpec(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'mode': 'V1alpha1WorkflowExecuteMode',
         'steps': 'list[V1alpha1WorkflowStep]'
     }
 
     attribute_map = {
-        'mode': 'mode',
         'steps': 'steps'
     }
 
-    def __init__(self, mode=None, steps=None):  # noqa: E501
+    def __init__(self, steps=None):  # noqa: E501
         """V1alpha1WorkflowSpec - a model defined in Swagger"""  # noqa: E501
-        self._mode = None
         self._steps = None
         self.discriminator = None
-        if mode is not None:
-            self.mode = mode
         if steps is not None:
             self.steps = steps
-
-    @property
-    def mode(self):
-        """Gets the mode of this V1alpha1WorkflowSpec.  # noqa: E501
-
-
-        :return: The mode of this V1alpha1WorkflowSpec.  # noqa: E501
-        :rtype: V1alpha1WorkflowExecuteMode
-        """
-        return self._mode
-
-    @mode.setter
-    def mode(self, mode):
-        """Sets the mode of this V1alpha1WorkflowSpec.
-
-
-        :param mode: The mode of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type: V1alpha1WorkflowExecuteMode
-        """
-
-        self._mode = mode
 
     @property
     def steps(self):

@@ -37,7 +37,8 @@ class V1EnvBindingBase(object):
         'name': 'str',
         'target_names': 'list[str]',
         'targets': 'list[V1EnvBindingTarget]',
-        'update_time': 'datetime'
+        'update_time': 'datetime',
+        'workflow': 'V1NameAlias'
     }
 
     attribute_map = {
@@ -50,10 +51,11 @@ class V1EnvBindingBase(object):
         'name': 'name',
         'target_names': 'targetNames',
         'targets': 'targets',
-        'update_time': 'updateTime'
+        'update_time': 'updateTime',
+        'workflow': 'workflow'
     }
 
-    def __init__(self, alias=None, app_deploy_name=None, app_deploy_namespace=None, component_selector=None, create_time=None, description=None, name=None, target_names=None, targets=None, update_time=None):  # noqa: E501
+    def __init__(self, alias=None, app_deploy_name=None, app_deploy_namespace=None, component_selector=None, create_time=None, description=None, name=None, target_names=None, targets=None, update_time=None, workflow=None):  # noqa: E501
         """V1EnvBindingBase - a model defined in Swagger"""  # noqa: E501
         self._alias = None
         self._app_deploy_name = None
@@ -65,6 +67,7 @@ class V1EnvBindingBase(object):
         self._target_names = None
         self._targets = None
         self._update_time = None
+        self._workflow = None
         self.discriminator = None
         if alias is not None:
             self.alias = alias
@@ -80,6 +83,7 @@ class V1EnvBindingBase(object):
         if targets is not None:
             self.targets = targets
         self.update_time = update_time
+        self.workflow = workflow
 
     @property
     def alias(self):
@@ -302,6 +306,29 @@ class V1EnvBindingBase(object):
             raise ValueError("Invalid value for `update_time`, must not be `None`")  # noqa: E501
 
         self._update_time = update_time
+
+    @property
+    def workflow(self):
+        """Gets the workflow of this V1EnvBindingBase.  # noqa: E501
+
+
+        :return: The workflow of this V1EnvBindingBase.  # noqa: E501
+        :rtype: V1NameAlias
+        """
+        return self._workflow
+
+    @workflow.setter
+    def workflow(self, workflow):
+        """Sets the workflow of this V1EnvBindingBase.
+
+
+        :param workflow: The workflow of this V1EnvBindingBase.  # noqa: E501
+        :type: V1NameAlias
+        """
+        if workflow is None:
+            raise ValueError("Invalid value for `workflow`, must not be `None`")  # noqa: E501
+
+        self._workflow = workflow
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -32,6 +32,7 @@ class V1GetPipelineRunLogResponse(object):
         'log': 'str',
         'name': 'str',
         'phase': 'str',
+        'source': 'str',
         'type': 'str'
     }
 
@@ -40,21 +41,24 @@ class V1GetPipelineRunLogResponse(object):
         'log': 'log',
         'name': 'name',
         'phase': 'phase',
+        'source': 'source',
         'type': 'type'
     }
 
-    def __init__(self, id=None, log=None, name=None, phase=None, type=None):  # noqa: E501
+    def __init__(self, id=None, log=None, name=None, phase=None, source=None, type=None):  # noqa: E501
         """V1GetPipelineRunLogResponse - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._log = None
         self._name = None
         self._phase = None
+        self._source = None
         self._type = None
         self.discriminator = None
         self.id = id
         self.log = log
         self.name = name
         self.phase = phase
+        self.source = source
         self.type = type
 
     @property
@@ -148,6 +152,29 @@ class V1GetPipelineRunLogResponse(object):
             raise ValueError("Invalid value for `phase`, must not be `None`")  # noqa: E501
 
         self._phase = phase
+
+    @property
+    def source(self):
+        """Gets the source of this V1GetPipelineRunLogResponse.  # noqa: E501
+
+
+        :return: The source of this V1GetPipelineRunLogResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._source
+
+    @source.setter
+    def source(self, source):
+        """Sets the source of this V1GetPipelineRunLogResponse.
+
+
+        :param source: The source of this V1GetPipelineRunLogResponse.  # noqa: E501
+        :type: str
+        """
+        if source is None:
+            raise ValueError("Invalid value for `source`, must not be `None`")  # noqa: E501
+
+        self._source = source
 
     @property
     def type(self):

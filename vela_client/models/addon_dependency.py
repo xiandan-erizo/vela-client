@@ -28,19 +28,24 @@ class AddonDependency(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str'
+        'name': 'str',
+        'version': 'str'
     }
 
     attribute_map = {
-        'name': 'name'
+        'name': 'name',
+        'version': 'version'
     }
 
-    def __init__(self, name=None):  # noqa: E501
+    def __init__(self, name=None, version=None):  # noqa: E501
         """AddonDependency - a model defined in Swagger"""  # noqa: E501
         self._name = None
+        self._version = None
         self.discriminator = None
         if name is not None:
             self.name = name
+        if version is not None:
+            self.version = version
 
     @property
     def name(self):
@@ -62,6 +67,27 @@ class AddonDependency(object):
         """
 
         self._name = name
+
+    @property
+    def version(self):
+        """Gets the version of this AddonDependency.  # noqa: E501
+
+
+        :return: The version of this AddonDependency.  # noqa: E501
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this AddonDependency.
+
+
+        :param version: The version of this AddonDependency.  # noqa: E501
+        :type: str
+        """
+
+        self._version = version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -34,8 +34,10 @@ class V1DetailWorkflowResponse(object):
         'description': 'str',
         'enable': 'bool',
         'env_name': 'str',
+        'mode': 'str',
         'name': 'str',
         'steps': 'list[V1WorkflowStep]',
+        'sub_mode': 'str',
         'update_time': 'datetime'
     }
 
@@ -46,12 +48,14 @@ class V1DetailWorkflowResponse(object):
         'description': 'description',
         'enable': 'enable',
         'env_name': 'envName',
+        'mode': 'mode',
         'name': 'name',
         'steps': 'steps',
+        'sub_mode': 'subMode',
         'update_time': 'updateTime'
     }
 
-    def __init__(self, alias=None, create_time=None, default=None, description=None, enable=None, env_name=None, name=None, steps=None, update_time=None):  # noqa: E501
+    def __init__(self, alias=None, create_time=None, default=None, description=None, enable=None, env_name=None, mode=None, name=None, steps=None, sub_mode=None, update_time=None):  # noqa: E501
         """V1DetailWorkflowResponse - a model defined in Swagger"""  # noqa: E501
         self._alias = None
         self._create_time = None
@@ -59,8 +63,10 @@ class V1DetailWorkflowResponse(object):
         self._description = None
         self._enable = None
         self._env_name = None
+        self._mode = None
         self._name = None
         self._steps = None
+        self._sub_mode = None
         self._update_time = None
         self.discriminator = None
         self.alias = alias
@@ -69,9 +75,11 @@ class V1DetailWorkflowResponse(object):
         self.description = description
         self.enable = enable
         self.env_name = env_name
+        self.mode = mode
         self.name = name
         if steps is not None:
             self.steps = steps
+        self.sub_mode = sub_mode
         self.update_time = update_time
 
     @property
@@ -213,6 +221,29 @@ class V1DetailWorkflowResponse(object):
         self._env_name = env_name
 
     @property
+    def mode(self):
+        """Gets the mode of this V1DetailWorkflowResponse.  # noqa: E501
+
+
+        :return: The mode of this V1DetailWorkflowResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._mode
+
+    @mode.setter
+    def mode(self, mode):
+        """Sets the mode of this V1DetailWorkflowResponse.
+
+
+        :param mode: The mode of this V1DetailWorkflowResponse.  # noqa: E501
+        :type: str
+        """
+        if mode is None:
+            raise ValueError("Invalid value for `mode`, must not be `None`")  # noqa: E501
+
+        self._mode = mode
+
+    @property
     def name(self):
         """Gets the name of this V1DetailWorkflowResponse.  # noqa: E501
 
@@ -255,6 +286,29 @@ class V1DetailWorkflowResponse(object):
         """
 
         self._steps = steps
+
+    @property
+    def sub_mode(self):
+        """Gets the sub_mode of this V1DetailWorkflowResponse.  # noqa: E501
+
+
+        :return: The sub_mode of this V1DetailWorkflowResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._sub_mode
+
+    @sub_mode.setter
+    def sub_mode(self, sub_mode):
+        """Sets the sub_mode of this V1DetailWorkflowResponse.
+
+
+        :param sub_mode: The sub_mode of this V1DetailWorkflowResponse.  # noqa: E501
+        :type: str
+        """
+        if sub_mode is None:
+            raise ValueError("Invalid value for `sub_mode`, must not be `None`")  # noqa: E501
+
+        self._sub_mode = sub_mode
 
     @property
     def update_time(self):

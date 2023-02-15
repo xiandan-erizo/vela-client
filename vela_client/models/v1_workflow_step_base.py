@@ -36,7 +36,7 @@ class V1WorkflowStepBase(object):
         'meta': 'V1alpha1WorkflowStepMeta',
         'name': 'str',
         'outputs': 'list[V1alpha1OutputItem]',
-        'properties': 'str',
+        'properties': 'object',
         'timeout': 'str',
         'type': 'str'
     }
@@ -266,7 +266,7 @@ class V1WorkflowStepBase(object):
 
 
         :return: The properties of this V1WorkflowStepBase.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._properties
 
@@ -276,7 +276,7 @@ class V1WorkflowStepBase(object):
 
 
         :param properties: The properties of this V1WorkflowStepBase.  # noqa: E501
-        :type: str
+        :type: object
         """
 
         self._properties = properties

@@ -16,5 +16,5 @@ Name | Type | Description | Notes
 **resource_info** | [**V1ApplicationResourceInfo**](V1ApplicationResourceInfo.md) |  | 
 **update_time** | **datetime** |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to README]](../vela-client/README.md)
 

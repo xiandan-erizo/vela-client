@@ -71,7 +71,8 @@ class V1alpha1WorkflowStepBase(object):
             self.inputs = inputs
         if meta is not None:
             self.meta = meta
-        self.name = name
+        if name is not None:
+            self.name = name
         if outputs is not None:
             self.outputs = outputs
         if properties is not None:
@@ -182,8 +183,6 @@ class V1alpha1WorkflowStepBase(object):
         :param name: The name of this V1alpha1WorkflowStepBase.  # noqa: E501
         :type: str
         """
-        if name is None:
-            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
 

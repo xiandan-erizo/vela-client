@@ -7,5 +7,5 @@ Name | Type | Description | Notes
 **compare_revision_with_latest** | [**V1CompareRevisionWithLatestOption**](V1CompareRevisionWithLatestOption.md) |  | [optional] 
 **compare_revision_with_running** | [**V1CompareRevisionWithRunningOption**](V1CompareRevisionWithRunningOption.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../vela-client/README.md#documentation-for-models) [[Back to API list]](../vela-client/README.md#documentation-for-api-endpoints) [[Back to README]](../vela-client/README.md)
 

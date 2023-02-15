@@ -1538,6 +1538,115 @@ class PipelineApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def resume_pipeline_run(self, project_name, pipeline_name, run_name, **kwargs):  # noqa: E501
+        """resume suspend pipeline run  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.resume_pipeline_run(project_name, pipeline_name, run_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str project_name: project name (required)
+        :param str pipeline_name: pipeline name (required)
+        :param str run_name: pipeline run name (required)
+        :return: V1EmptyResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.resume_pipeline_run_with_http_info(project_name, pipeline_name, run_name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.resume_pipeline_run_with_http_info(project_name, pipeline_name, run_name, **kwargs)  # noqa: E501
+            return data
+
+    def resume_pipeline_run_with_http_info(self, project_name, pipeline_name, run_name, **kwargs):  # noqa: E501
+        """resume suspend pipeline run  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.resume_pipeline_run_with_http_info(project_name, pipeline_name, run_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str project_name: project name (required)
+        :param str pipeline_name: pipeline name (required)
+        :param str run_name: pipeline run name (required)
+        :return: V1EmptyResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['project_name', 'pipeline_name', 'run_name']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method resume_pipeline_run" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'project_name' is set
+        if ('project_name' not in params or
+                params['project_name'] is None):
+            raise ValueError("Missing the required parameter `project_name` when calling `resume_pipeline_run`")  # noqa: E501
+        # verify the required parameter 'pipeline_name' is set
+        if ('pipeline_name' not in params or
+                params['pipeline_name'] is None):
+            raise ValueError("Missing the required parameter `pipeline_name` when calling `resume_pipeline_run`")  # noqa: E501
+        # verify the required parameter 'run_name' is set
+        if ('run_name' not in params or
+                params['run_name'] is None):
+            raise ValueError("Missing the required parameter `run_name` when calling `resume_pipeline_run`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'project_name' in params:
+            path_params['projectName'] = params['project_name']  # noqa: E501
+        if 'pipeline_name' in params:
+            path_params['pipelineName'] = params['pipeline_name']  # noqa: E501
+        if 'run_name' in params:
+            path_params['runName'] = params['run_name']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'application/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ["BearerToken"]  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}/resume', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='V1EmptyResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def run_pipeline(self, body, project_name, pipeline_name, **kwargs):  # noqa: E501
         """run pipeline  # noqa: E501
 
@@ -1753,6 +1862,115 @@ class PipelineApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='V1PipelineRunMeta',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def terminate_pipeline_run(self, project_name, pipeline_name, run_name, **kwargs):  # noqa: E501
+        """resume suspend pipeline run  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.terminate_pipeline_run(project_name, pipeline_name, run_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str project_name: project name (required)
+        :param str pipeline_name: pipeline name (required)
+        :param str run_name: pipeline run name (required)
+        :return: V1EmptyResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.terminate_pipeline_run_with_http_info(project_name, pipeline_name, run_name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.terminate_pipeline_run_with_http_info(project_name, pipeline_name, run_name, **kwargs)  # noqa: E501
+            return data
+
+    def terminate_pipeline_run_with_http_info(self, project_name, pipeline_name, run_name, **kwargs):  # noqa: E501
+        """resume suspend pipeline run  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.terminate_pipeline_run_with_http_info(project_name, pipeline_name, run_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str project_name: project name (required)
+        :param str pipeline_name: pipeline name (required)
+        :param str run_name: pipeline run name (required)
+        :return: V1EmptyResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['project_name', 'pipeline_name', 'run_name']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method terminate_pipeline_run" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'project_name' is set
+        if ('project_name' not in params or
+                params['project_name'] is None):
+            raise ValueError("Missing the required parameter `project_name` when calling `terminate_pipeline_run`")  # noqa: E501
+        # verify the required parameter 'pipeline_name' is set
+        if ('pipeline_name' not in params or
+                params['pipeline_name'] is None):
+            raise ValueError("Missing the required parameter `pipeline_name` when calling `terminate_pipeline_run`")  # noqa: E501
+        # verify the required parameter 'run_name' is set
+        if ('run_name' not in params or
+                params['run_name'] is None):
+            raise ValueError("Missing the required parameter `run_name` when calling `terminate_pipeline_run`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'project_name' in params:
+            path_params['projectName'] = params['project_name']  # noqa: E501
+        if 'pipeline_name' in params:
+            path_params['pipelineName'] = params['pipeline_name']  # noqa: E501
+        if 'run_name' in params:
+            path_params['runName'] = params['run_name']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'application/xml'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ["BearerToken"]  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}/terminate', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='V1EmptyResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
