@@ -107,7 +107,7 @@ class RepositoryApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/repository/charts/{chart}/versions/{version}/values', 'GET',
@@ -212,7 +212,7 @@ class RepositoryApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/repository/image/info', 'GET',
@@ -305,7 +305,7 @@ class RepositoryApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/repository/image/repos', 'GET',
@@ -398,7 +398,7 @@ class RepositoryApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/repository/charts', 'GET',
@@ -491,7 +491,7 @@ class RepositoryApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/repository/chart_repos', 'GET',
@@ -584,7 +584,7 @@ class RepositoryApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/repository/charts/{chart}/versions', 'GET',

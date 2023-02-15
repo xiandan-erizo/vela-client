@@ -111,7 +111,7 @@ class AddonRegistryApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/addon_registries', 'POST',
@@ -204,7 +204,7 @@ class AddonRegistryApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/addon_registries/{addonRegName}', 'DELETE',
@@ -289,7 +289,7 @@ class AddonRegistryApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/addon_registries', 'GET',
@@ -394,7 +394,7 @@ class AddonRegistryApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/addon_registries/{addonRegName}', 'PUT',

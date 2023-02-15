@@ -111,7 +111,7 @@ class ConfigApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/configs', 'POST',
@@ -204,7 +204,7 @@ class ConfigApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/configs/{configName}', 'DELETE',
@@ -297,7 +297,7 @@ class ConfigApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/configs/{configName}', 'GET',
@@ -394,7 +394,7 @@ class ConfigApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/config_templates/{templateName}', 'GET',
@@ -483,7 +483,7 @@ class ConfigApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/configs', 'GET',
@@ -568,7 +568,7 @@ class ConfigApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/config_templates', 'GET',
@@ -661,7 +661,7 @@ class ConfigApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/configs/{configName}', 'PUT',

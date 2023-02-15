@@ -119,7 +119,7 @@ class ProjectApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/distributions', 'POST',
@@ -224,7 +224,7 @@ class ProjectApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/configs', 'POST',
@@ -317,7 +317,7 @@ class ProjectApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/permissions', 'POST',
@@ -422,7 +422,7 @@ class ProjectApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/roles', 'POST',
@@ -527,7 +527,7 @@ class ProjectApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/users', 'POST',
@@ -624,7 +624,7 @@ class ProjectApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects', 'POST',
@@ -725,7 +725,7 @@ class ProjectApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/configs/{configName}', 'DELETE',
@@ -826,7 +826,7 @@ class ProjectApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/distributions/{distributionName}', 'DELETE',
@@ -919,7 +919,7 @@ class ProjectApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}', 'DELETE',
@@ -1020,7 +1020,7 @@ class ProjectApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/permissions/{permissionName}', 'DELETE',
@@ -1121,7 +1121,7 @@ class ProjectApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/roles/{roleName}', 'DELETE',
@@ -1234,7 +1234,7 @@ class ProjectApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/users/{userName}', 'DELETE',
@@ -1347,7 +1347,7 @@ class ProjectApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/configs/{configName}', 'GET',
@@ -1440,7 +1440,7 @@ class ProjectApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}', 'GET',
@@ -1537,7 +1537,7 @@ class ProjectApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/config_templates/{templateName}', 'GET',
@@ -1638,7 +1638,7 @@ class ProjectApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/config_templates', 'GET',
@@ -1735,7 +1735,7 @@ class ProjectApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/configs', 'GET',
@@ -1828,7 +1828,7 @@ class ProjectApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/providers', 'GET',
@@ -1921,7 +1921,7 @@ class ProjectApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/distributions', 'GET',
@@ -2014,7 +2014,7 @@ class ProjectApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/permissions', 'GET',
@@ -2107,7 +2107,7 @@ class ProjectApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/roles', 'GET',
@@ -2200,7 +2200,7 @@ class ProjectApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/targets', 'GET',
@@ -2293,7 +2293,7 @@ class ProjectApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/users', 'GET',
@@ -2378,7 +2378,7 @@ class ProjectApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects', 'GET',
@@ -2491,7 +2491,7 @@ class ProjectApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/configs/{configName}', 'PUT',
@@ -2596,7 +2596,7 @@ class ProjectApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}', 'PUT',
@@ -2709,7 +2709,7 @@ class ProjectApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/roles/{roleName}', 'PUT',
@@ -2822,7 +2822,7 @@ class ProjectApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/users/{userName}', 'PUT',

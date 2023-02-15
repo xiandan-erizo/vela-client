@@ -127,7 +127,7 @@ class ApplicationApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/components/{compName}/traits', 'POST',
@@ -220,7 +220,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/statistics', 'GET',
@@ -325,7 +325,7 @@ class ApplicationApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/compare', 'POST',
@@ -422,7 +422,7 @@ class ApplicationApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications', 'POST',
@@ -527,7 +527,7 @@ class ApplicationApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/envs', 'POST',
@@ -632,7 +632,7 @@ class ApplicationApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/policies', 'POST',
@@ -737,7 +737,7 @@ class ApplicationApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/triggers', 'POST',
@@ -842,7 +842,7 @@ class ApplicationApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/components', 'POST',
@@ -947,7 +947,7 @@ class ApplicationApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/workflows', 'POST',
@@ -1040,7 +1040,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}', 'DELETE',
@@ -1141,7 +1141,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/envs/{envName}', 'DELETE',
@@ -1246,7 +1246,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/policies/{policyName}', 'DELETE',
@@ -1355,7 +1355,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/components/{compName}/traits/{traitType}', 'DELETE',
@@ -1456,7 +1456,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/triggers/{token}', 'DELETE',
@@ -1557,7 +1557,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/components/{compName}', 'DELETE',
@@ -1658,7 +1658,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/workflows/{workflowName}', 'DELETE',
@@ -1763,7 +1763,7 @@ class ApplicationApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/deploy', 'POST',
@@ -1856,7 +1856,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}', 'GET',
@@ -1957,7 +1957,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/policies/{policyName}', 'GET',
@@ -2058,7 +2058,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/revisions/{revision}', 'GET',
@@ -2159,7 +2159,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/components/{compName}', 'GET',
@@ -2260,7 +2260,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/workflows/{workflowName}', 'GET',
@@ -2369,7 +2369,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/workflows/{workflowName}/records/{record}', 'GET',
@@ -2474,7 +2474,7 @@ class ApplicationApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/dry-run', 'POST',
@@ -2575,7 +2575,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/envs/{envName}/status', 'GET',
@@ -2672,7 +2672,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/components', 'GET',
@@ -2765,7 +2765,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/envs', 'GET',
@@ -2858,7 +2858,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/policies', 'GET',
@@ -2951,7 +2951,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/records', 'GET',
@@ -3060,7 +3060,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/revisions', 'GET',
@@ -3153,7 +3153,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/triggers', 'GET',
@@ -3246,7 +3246,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/workflows', 'GET',
@@ -3347,7 +3347,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications', 'GET',
@@ -3456,7 +3456,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/workflows/{workflowName}/records', 'GET',
@@ -3561,7 +3561,7 @@ class ApplicationApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/template', 'POST',
@@ -3662,7 +3662,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/envs/{envName}/recycle', 'POST',
@@ -3755,7 +3755,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/reset', 'POST',
@@ -3864,7 +3864,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/workflows/{workflowName}/records/{record}/resume', 'GET',
@@ -3977,7 +3977,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/workflows/{workflowName}/records/{record}/rollback', 'GET',
@@ -4086,7 +4086,7 @@ class ApplicationApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/workflows/{workflowName}/records/{record}/terminate', 'GET',
@@ -4191,7 +4191,7 @@ class ApplicationApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}', 'PUT',
@@ -4304,7 +4304,7 @@ class ApplicationApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/envs/{envName}', 'PUT',
@@ -4417,7 +4417,7 @@ class ApplicationApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/policies/{policyName}', 'PUT',
@@ -4538,7 +4538,7 @@ class ApplicationApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/components/{compName}/traits/{traitType}', 'PUT',
@@ -4651,7 +4651,7 @@ class ApplicationApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/components/{compName}', 'PUT',
@@ -4764,7 +4764,7 @@ class ApplicationApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/applications/{appName}/workflows/{workflowName}', 'PUT',

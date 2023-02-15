@@ -228,8 +228,15 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
 
         :return: The Auth Settings information dict.
         """
-        return {
-        }
+        auth = {}
+        if 'authorization' in self.api_key:
+            auth['BearerToken'] = {
+                'type': 'api_key',
+                'in': 'header',
+                'key': 'authorization',
+                'value': self.get_api_key_with_prefix('authorization')
+            }
+        return auth
 
     def to_debug_report(self):
         """Gets the essential information for debugging.

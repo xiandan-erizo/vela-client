@@ -127,7 +127,7 @@ class PipelineApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/pipelines/{pipelineName}/contexts', 'POST',
@@ -232,7 +232,7 @@ class PipelineApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/pipelines', 'POST',
@@ -341,7 +341,7 @@ class PipelineApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/pipelines/{pipelineName}/contexts/{contextName}', 'DELETE',
@@ -442,7 +442,7 @@ class PipelineApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/pipelines/{pipelineName}', 'DELETE',
@@ -551,7 +551,7 @@ class PipelineApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}', 'DELETE',
@@ -652,7 +652,7 @@ class PipelineApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/pipelines/{pipelineName}', 'GET',
@@ -761,7 +761,7 @@ class PipelineApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}', 'GET',
@@ -878,7 +878,7 @@ class PipelineApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}/input', 'GET',
@@ -991,7 +991,7 @@ class PipelineApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}/log', 'GET',
@@ -1108,7 +1108,7 @@ class PipelineApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}/output', 'GET',
@@ -1217,7 +1217,7 @@ class PipelineApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}/status', 'GET',
@@ -1318,7 +1318,7 @@ class PipelineApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/pipelines/{pipelineName}/contexts', 'GET',
@@ -1423,7 +1423,7 @@ class PipelineApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs', 'GET',
@@ -1520,7 +1520,7 @@ class PipelineApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/pipelines', 'GET',
@@ -1633,7 +1633,7 @@ class PipelineApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/pipelines/{pipelineName}/run', 'POST',
@@ -1742,7 +1742,7 @@ class PipelineApi(object):
             ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/pipelines/{pipelineName}/runs/{runName}/stop', 'POST',
@@ -1863,7 +1863,7 @@ class PipelineApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/pipelines/{pipelineName}/contexts/{contextName}', 'PUT',
@@ -1976,7 +1976,7 @@ class PipelineApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ["BearerToken"]  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/projects/{projectName}/pipelines/{pipelineName}', 'PUT',
